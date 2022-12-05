@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { TextInput } from "react-native";
+import univespLogo from "../../../assets/logo-univesp.png";
 
 export const Container = styled.View`
   display: flex;
@@ -10,21 +11,29 @@ export const Container = styled.View`
   background-color: white;
 `;
 export const Content = styled.View`
-  border: 1.5px solid white;
   justify-content: center;
   align-items: center;
   width: 80%;
-  height: 70%;
   background-color: white;
   border-radius: 10px;
 `;
 
 export const HomeLabel = styled.Text`
-  color: #e9482c;
+  color: #af1817;
   font-weight: bold;
-  margin: 0 0 5px 0;
+  margin-top: ${({ margintop }) => margintop || 0}px;
   font-size: ${({ size }) => size || 15}px;
+  text-align: center;
 `;
+
+export const Result = styled.Text`
+  color: black;
+  font-weight: 600;
+  margin-top: ${({ margintop }) => margintop || 0}px;
+  font-size: ${({ size }) => size || 15}px;
+  text-align: center;
+`;
+
 export const ContainerInput = styled.View`
   width: 300px;
   height: 120px;
@@ -37,22 +46,25 @@ export const HomeInput = styled(TextInput)`
   width: 100%;
   height: 40px;
   border-radius: 10px;
-  background-color: #f1f5f4;
+  background-color: #f2f2f2;
+  text-align: center;
   margin: 10px;
+  padding: 10px;
 `;
+
 export const ContentButton = styled.TouchableOpacity.attrs({
   activeOpacity: 0.7,
 })`
   color: white;
   font-weight: bold;
-  width: 250px;
+  width: 80%;
   height: 40px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 100px 0 0 0;
-  background-color: #e9482c;
+  margin-top: 20px
+  background-color: #af1817;
 `;
 export const ButtonText = styled.Text`
   color: white;
@@ -67,8 +79,26 @@ export const ContentButtonLogout = styled.View`
 `;
 
 export const ButtonLogout = styled.Text`
-  color: white;
   width: 50px;
   font-size: 17px;
-  margin: 10px 0 0 0;
+  color: black;
+  margin: 0 20px 0 0;
+  padding: 5px;
+  background-color: #f2f2f2;
+  text-align: center;
+  border-radius: 10px;
+`;
+
+export const ContentImage = styled.View`
+  margin-bottom: 50px
+  margin-top: -150px
+  width: 100%;
+  height: 20%;
+`;
+
+export const UnivespLogo = styled.Image.attrs({
+  source: univespLogo,
+})`
+  width: ${({ size }) => size || 100}%;
+  height: ${({ size }) => size || 100}%;
 `;

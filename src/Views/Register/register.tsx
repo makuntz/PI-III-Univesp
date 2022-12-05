@@ -9,7 +9,6 @@ import {
   RegisterTitle,
 } from "./styles"
 import { useForm, Controller } from "react-hook-form";
-import { Input } from "../../Components/Input";
 import { useNavigation } from "@react-navigation/native"
 import { propsStack } from "../../Routes/Models"
 
@@ -36,7 +35,7 @@ export const Register = () => {
   return (
     <>
       <Container>
-        <RegisterTitle size={30}>Cadastrar</RegisterTitle>
+        <RegisterTitle size={25}>Cadastro</RegisterTitle>
         <Content>
           <ContainerInput>
             <RegisterLabel>Nome</RegisterLabel>
@@ -48,14 +47,15 @@ export const Register = () => {
               
             }}
             render={({ field: { onChange } }) => (
-              <Input
+              <RegisterInput
+                placeholder="Digite seu nome"
                 onChangeText={onChange}
                 errorMessage={errors.name?.message}
                 
               />
             )}
           />
-          <RegisterLabel>R.A.</RegisterLabel>
+          <RegisterLabel>Registro acadêmico</RegisterLabel>
           <Controller
             control={control}
             name="ra"
@@ -64,7 +64,8 @@ export const Register = () => {
               
             }}
             render={({ field: { onChange } }) => (
-              <Input 
+              <RegisterInput 
+              placeholder="Digite seu R.A."
               errorMessage={errors.ra?.message} 
               onChangeText={onChange}
               keyboardType="number-pad"

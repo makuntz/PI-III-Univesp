@@ -7,7 +7,7 @@ export const Container = styled.View`
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: #e9482c;
+  background-color: white;
 `;
 
 export const Content = styled.View`
@@ -16,7 +16,7 @@ export const Content = styled.View`
   align-items: center;
   width: 80%;
   height: 70%;
-  background-color: #e9482c;
+  background-color: white;
   border-radius: 10px;
 `;
 
@@ -25,7 +25,6 @@ export const ContentButton = styled.TouchableOpacity.attrs({
 })`
   color: white;
   font-weight: bold;
-  border: 1px solid white;
   width: 200px;
   height: 40px;
   border-radius: 10px;
@@ -33,6 +32,8 @@ export const ContentButton = styled.TouchableOpacity.attrs({
   align-items: center;
   justify-content: center;
   margin: 30px 0 0 0;
+  background-color: #af1817
+  ;
 `;
 
 export const ButtonText = styled.Text`
@@ -41,15 +42,13 @@ export const ButtonText = styled.Text`
 `;
 
 export const ContentImage = styled.View`
-  width: 200px;
-  height: 230px;
-  background-color: #f2f2f2;
+  width: 100%;
+  height: 50%;
 `;
 
 export const UnivespLogo = styled.Image.attrs({
   source: univespLogo,
 })`
-  width: ${({ size }) => size || 200}px;
-  height: ${({ size }) => size || 230}px;
-  background-color: #f2f2f2;
+  width: ${({ size }) => size || 100}%;
+  height: ${({ size }) => size || 50}%;
 `;

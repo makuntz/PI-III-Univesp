@@ -10,7 +10,7 @@ export const Input = ({errorMessage = null, isInvalid, ...rest }: Props) => {
 
   return (
     <FormControl mb={6} isInvalid={invalid}>
-      <NativeBaseInput
+      <NativeBaseInput 
         isInvalid={invalid}
         bg="gray.800"
         fontSize="md"

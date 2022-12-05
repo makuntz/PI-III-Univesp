@@ -20,19 +20,17 @@ export const Content = styled.View`
 `;
 
 export const RegisterTitle = styled.Text`
-  color: #e9482c;
+  color: #af1817;
   font-weight: bold;
   font-size: ${({ size }) => size || 15}px;
 `;
 
 export const RegisterLabel = styled.Text`
-  color: #e9482c;
+  color: #af1817;
   font-weight: bold;
   display: flex;
   width: 290px;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin: 0 0 10px 0;
+  padding-top: 10px;
   font-size: ${({ size }) => size || 15}px;
 `;
 export const ContainerInput = styled.View`
@@ -47,7 +45,7 @@ export const RegisterInput = styled(TextInput)`
   width: 100%;
   height: 40px;
   border-radius: 10px;
-  background-color: #f1f5f4;
+  background-color: #f2f2f2;
   margin: 10px;
   padding: 10px;
 `;
@@ -62,8 +60,8 @@ export const ContentButton = styled.TouchableOpacity.attrs({
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
-  background-color: #e9482c;
+  background-color: #af1817;
+  margin-top: ${({ size }) => size || 100}px;
 `;
 export const ButtonText = styled.Text`
   color: white;

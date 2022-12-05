@@ -5,12 +5,14 @@ import {
   ContentButton,
   HomeInput,
   HomeLabel,
+  Result,
   ButtonLogout,
   ContentButtonLogout,
+  UnivespLogo,
+  ContentImage,
 } from "./styles"
 import { useNavigation } from "@react-navigation/native"
 import { propsStack } from "../../Routes/Models"
-import { Input } from "../../Components/Input";
 import { useState } from "react";
 
 
@@ -18,19 +20,16 @@ export const Home = () => {
   const [notaAtividade, setNotaAtividade] = useState(0)
   const [notaProva, setNotaProva] = useState(0)
   const [totalGrade, setTotalGrade] = useState(0)
-
-    const GradeCalculate = () => {
-      
-     setTotalGrade((notaProva * 0.6) + (notaAtividade * 0.4 ))
-
-    }
   
+  const GradeCalculate = () => {
+        setTotalGrade((notaProva * 0.6) + (notaAtividade * 0.4 ))
+  }
 
   const navigation = useNavigation<propsStack>()
 
  
   const HandleLogout = () => {
-    return navigation.navigate("SignIn")
+    return navigation.navigate("Login")
   }
 
   return (
@@ -39,24 +38,26 @@ export const Home = () => {
         <ButtonLogout onPress={HandleLogout}>Sair</ButtonLogout>
       </ContentButtonLogout>
       <Container>
+      <ContentImage>
+        <UnivespLogo />
+      </ContentImage>
         <Content>
           <HomeLabel>Nota das Atividades</HomeLabel>
-              <Input
+                <HomeInput
                 keyboardType="number-pad"
                 onChangeText={setNotaAtividade}
-              />
-            
+                />
+              
           
           <HomeLabel>Nota da Prova</HomeLabel>
-              <Input 
+              <HomeInput
               keyboardType="number-pad"
               onChangeText={setNotaProva}
               />
-              
-            <HomeLabel size={25}>Média Final : {totalGrade !== 0 ? totalGrade : ""}</HomeLabel>
           <ContentButton onPress={GradeCalculate}>
             <ButtonText>Calcular</ButtonText>
-          </ContentButton>
+          </ContentButton>  
+            <Result size={17} margintop={25}>{totalGrade !== 0 ? 'A média final é ' + totalGrade : ""} </Result>
         </Content>
       </Container>
     </>

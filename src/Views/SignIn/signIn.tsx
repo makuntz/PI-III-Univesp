@@ -24,7 +24,7 @@ export const SignIn = () => {
         </ContentImage>
 
         <ContentButton onPress={HandleLogin}>
-          <ButtonText>SignIn</ButtonText>
+          <ButtonText>Entrar</ButtonText>
         </ContentButton>
       </Content>
     </Container>

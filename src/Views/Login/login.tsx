@@ -1,6 +1,5 @@
 import { useNavigation } from "@react-navigation/native"
 import { useForm, Controller } from "react-hook-form";
-import { Input } from "../../Components/Input";
 import {
   Container,
   Content,
@@ -8,7 +7,11 @@ import {
   LoginLabel,
   ContainerInput,
   ContentButton,
+  ContentButton2,
   ButtonText,
+  ButtonText2,
+  UnivespLogo,
+  ContentImage,
 } from "./styles";
 
 import { propsStack } from "../../Routes/Models"
@@ -37,6 +40,9 @@ export const Login = () => {
 
   return (
     <Container>
+      <ContentImage>
+        <UnivespLogo />
+      </ContentImage>
       <Content>
         <ContainerInput>
           <LoginLabel>Login</LoginLabel>
@@ -48,9 +54,10 @@ export const Login = () => {
               
             }}
             render={({ field: { onChange } }) => (
-              <Input
+              <LoginInput
                 // isInvalid 
                 // errorMessage="Digite o E-mail"
+                placeholder="Digite seu nome"
                 onChangeText={onChange}
                 errorMessage={errors.name?.message}
               />
@@ -64,8 +71,9 @@ export const Login = () => {
               
             }}
             render={({ field: { onChange } }) => (
-              <Input 
+              <LoginInput 
               // isInvalid 
+              placeholder="Digite seu R.A."
               errorMessage={errors.ra?.message} 
               onChangeText={onChange}
               keyboardType="number-pad"
@@ -77,9 +85,9 @@ export const Login = () => {
         <ContentButton onPress={handleSubmit(HandleLogin)}>
           <ButtonText>Acessar</ButtonText>
         </ContentButton>
-        <ContentButton size={25} onPress={HandleRegister}>
-          <ButtonText>Cadastrar</ButtonText>
-        </ContentButton>
+        <ContentButton2 size={25} onPress={HandleRegister}>
+          <ButtonText2>Cadastrar</ButtonText2>
+        </ContentButton2>
       </Content>
     </Container>
   );
